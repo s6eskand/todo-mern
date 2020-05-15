@@ -52,7 +52,7 @@ class CreateTodo extends React.Component {
 
     render() {
         return(
-            <div className="create-todo">
+            <div className="todo-component">
                 <div className="container">
                     <h3>Create a Todo Here!</h3>
                     <form onSubmit={this.handleSubmit}>
@@ -70,7 +70,7 @@ class CreateTodo extends React.Component {
                             <input
                                 type="text"
                                 className="form-control"
-                                value={this.state.description}
+                                value={this.state.responsible}
                                 onChange={this.handleResponsibleChange}
                             />
                         </div>

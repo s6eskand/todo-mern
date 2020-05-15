@@ -52,7 +52,7 @@ class CreateTodo extends React.Component {
 
     render() {
         return(
-            <div style={{paddingTop: '100'}}>
+            <div className="create-todo">
                 <div className="container">
                     <h3>Create a Todo Here!</h3>
                     <form onSubmit={this.handleSubmit}>
@@ -64,6 +64,49 @@ class CreateTodo extends React.Component {
                                 value={this.state.description}
                                 onChange={this.handleDescriptionChange}
                             />
+                        </div>
+                        <div className="form-group">
+                            <label>Responsible: </label>
+                            <input
+                                type="text"
+                                className="form-control"
+                                value={this.state.description}
+                                onChange={this.handleResponsibleChange}
+                            />
+                        </div>
+                        <div className="form-group">
+                            <div id="priority" className="form-check form-check-inline">
+                                <input className="form-check-input"
+                                       type="radio"
+                                       name="priorityOptions"
+                                       id="priorityLow"
+                                       value="Low"
+                                       checked={this.state.priority === 'Low'}
+                                       onChange={this.handlePriorityChange}
+                                />
+                                <label className="form-check-label">Low</label>
+                                <input className="form-check-input"
+                                       type="radio"
+                                       name="priorityOptions"
+                                       id="priorityMedium"
+                                       value="Medium"
+                                       checked={this.state.priority === 'Medium'}
+                                       onChange={this.handlePriorityChange}
+                                />
+                                <label className="form-check-label">Medium</label>
+                                <input className="form-check-input"
+                                       type="radio"
+                                       name="priorityOptions"
+                                       id="priorityHigh"
+                                       value="High"
+                                       checked={this.state.priority === 'High'}
+                                       onChange={this.handlePriorityChange}
+                                />
+                                <label className="form-check-label">High</label>
+                            </div>
+                        </div>
+                        <div className="form-group">
+                            <input type="submit" value="Create Todo" className="btn btn-primary"/>
                         </div>
                     </form>
                 </div>

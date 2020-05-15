@@ -62,6 +62,8 @@ class CreateTodo extends React.Component {
             priority: '',
             isComplete: false,
         })
+
+        this.props.history.push('/');
     }
 
 

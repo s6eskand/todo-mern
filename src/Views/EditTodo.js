@@ -66,6 +66,8 @@ class EditTodo extends React.Component{
         })
             .then(res => console.log(res))
             .catch(err => console.error(err));
+
+        this.props.history.push('/');
     }
 
     render() {

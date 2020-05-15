@@ -9,9 +9,9 @@ class Todo extends React.Component {
     render() {
         return(
             <tr>
-                <td>{this.props.todo.description}</td>
-                <td>{this.props.todo.responsible}</td>
-                <td>{this.props.todo.priority}</td>
+                <td className={this.props.todo.isComplete ? "completed" : ""}>{this.props.todo.description}</td>
+                <td className={this.props.todo.isComplete ? "completed" : ""}>{this.props.todo.responsible}</td>
+                <td className={this.props.todo.isComplete ? "completed" : ""}>{this.props.todo.priority}</td>
                 <td>
                     <Link to={`/edit/${this.props.todo._id}`}>Edit</Link>
                 </td>

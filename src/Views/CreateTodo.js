@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 
 class CreateTodo extends React.Component {
     constructor(props) {
@@ -38,8 +39,22 @@ class CreateTodo extends React.Component {
     handleSubmit = (e) => {
         e.preventDefault();
 
-        console.log('Form Submitted')
-        console.log(this.state)
+        console.log('Form Submitted (frontend)');
+        console.log(this.state);
+
+        const newTodo = {
+            newDescription: this.state.description,
+            newResponsible: this.state.responsible,
+            newPriority: this.state.priority,
+            isComplete: this.state.isComplete
+        }
+
+        axios.post('http://localhost:4000/todos/add', {
+            description: newTodo.newDescription,
+            responsible: newTodo.newResponsible,
+            priority: newTodo.newPriority,
+        })
+            .then(res => console.log(res.data));
 
         this.setState({
             description: '',
